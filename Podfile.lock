@@ -1,0 +1,20 @@
+PODS:
+  - SwiftSocket (2.0.2)
+  - TactileSlider (1.2.0)
+
+DEPENDENCIES:
+  - SwiftSocket
+  - TactileSlider
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - SwiftSocket
+    - TactileSlider
+
+SPEC CHECKSUMS:
+  SwiftSocket: 6f4c9c63fbc5c1d61188936bb3c599fd546f40ae
+  TactileSlider: a08b2b40bafa0717e606123fec0c11174d039d54
+
+PODFILE CHECKSUM: 0ca8121ecdab5530610d031e0c77ea585f36e1fa
+
+COCOAPODS: 1.5.3
