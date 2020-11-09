@@ -25,7 +25,9 @@ class MainVc: UIViewController {
 
 	let defaultBrightness: CGFloat = 40
 	var imageArrayColor = [UIImage] ()
+    var imageArrayColorId = [String] ()
 	var imageArrayGradient = [UIImage] ()
+    var imageArrayGradientId = [String] ()
 	var dataCheck: [UInt8] = []
 
 	@IBOutlet weak var scrollViewLeft: UIScrollView!
@@ -112,6 +114,7 @@ class MainVc: UIViewController {
 		bedLights = !bedLights
 		bedLightsIcon.isSelected = bedLights
 		sendData(dat: [10, (bedLights ? 1 : 0)])
+        print("BED LIGHTS")
 	}
 
 	@IBAction func DeskLights(_ sender: Any) {
@@ -204,7 +207,7 @@ class MainVc: UIViewController {
 	@objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
 	{
 		let tappedImage = tapGestureRecognizer.view as! UIImageView
-		let name: String = tappedImage.image!.accessibilityIdentifier!
+        let name: String = tappedImage.accessibilityIdentifier!
 		print(name)
 		var byteArray = [Byte]()
 		for char in name.utf8 {
@@ -216,13 +219,15 @@ class MainVc: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+        //                           #imageLiteral(resourceName: "blue"),
+		imageArrayColor = [#imageLiteral(resourceName: "white"),#imageLiteral(resourceName: "red"),#imageLiteral(resourceName: "redish"),#imageLiteral(resourceName: "orange2"),#imageLiteral(resourceName: "orange"),#imageLiteral(resourceName: "yellow"),#imageLiteral(resourceName: "green1"),#imageLiteral(resourceName: "green2"),#imageLiteral(resourceName: "blue4"),#imageLiteral(resourceName: "blue3"),#imageLiteral(resourceName: "blue2"),#imageLiteral(resourceName: "blue"),#imageLiteral(resourceName: "lavender"),#imageLiteral(resourceName: "purple2")]
+        imageArrayColorId = ["white","red","redish","orange2","orange","yellow","green1","green2","blue4","blue3","blue2", "blue","lavender","purple2"]
 
-		imageArrayColor = [#imageLiteral(resourceName: "white"), #imageLiteral(resourceName: "red"), #imageLiteral(resourceName: "redish"), #imageLiteral(resourceName: "orange2"), #imageLiteral(resourceName: "orange"), #imageLiteral(resourceName: "yellow"), #imageLiteral(resourceName: "green1"), #imageLiteral(resourceName: "green2"), #imageLiteral(resourceName: "blue4"), #imageLiteral(resourceName: "blue3"), #imageLiteral(resourceName: "blue2"), #imageLiteral(resourceName: "blue"), #imageLiteral(resourceName: "lavender"), #imageLiteral(resourceName: "purple2")]
 		imageArrayGradient = [#imageLiteral(resourceName: "rainbow"), #imageLiteral(resourceName: "bhw4_048"), #imageLiteral(resourceName: "bhw2_n"), #imageLiteral(resourceName: "bhw4_018"), #imageLiteral(resourceName: "bhw1_w00t"), #imageLiteral(resourceName: "bhw4_024"), #imageLiteral(resourceName: "bhw1_purplered"), #imageLiteral(resourceName: "bhw1_04"), #imageLiteral(resourceName: "bhw2_51"), #imageLiteral(resourceName: "bhw2_57"), #imageLiteral(resourceName: "bhw3_52"), #imageLiteral(resourceName: "bhw3_23")]
+        imageArrayGradientId = ["rainbow","bhw4_048","bhw2_n","bhw4_018","bhw1_w00t","bhw4_024","bhw1_purplered","bhw1_04","bhw2_51","bhw2_57","bhw3_52","bhw3_23"]
 
 		scrollViewLeft.contentSize.height = CGFloat(imageArrayColor.count) * (colorHeight + colorHeightSPace)
 		scrollViewRight.contentSize.height = CGFloat(imageArrayGradient.count) * (colorHeight + colorHeightSPace)
-
 		for i in 0..<imageArrayColor.count {
 			let tap = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
 			let imageView = UIImageView()
@@ -230,6 +235,7 @@ class MainVc: UIViewController {
 			imageView.addGestureRecognizer(tap)
 			let w = scrollViewLeft.frame.width
 			imageView.image = imageArrayColor[i]
+            imageView.accessibilityIdentifier = imageArrayColorId[i]
 			let xPosition: CGFloat = 0
 			let yPosition = (colorHeight + colorHeightSPace) * CGFloat(i)
 
@@ -246,6 +252,7 @@ class MainVc: UIViewController {
 			imageView.addGestureRecognizer(tap)
 			let w = scrollViewRight.frame.width
 			imageView.image = imageArrayGradient[i]
+            imageView.accessibilityIdentifier = imageArrayGradientId[i]
 			let xPosition = CGFloat(0)
 			let yPosition = (colorHeight + colorHeightSPace) * CGFloat(i)
 			

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FW5-1Z-hgw">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FW5-1Z-hgw">
                                 <rect key="frame" x="230.66666666666663" y="104" width="95" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="95" id="TOW-i8-bEx"/>
@@ -32,14 +33,12 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vWC-Gc-6Qf" customClass="TactileSlider" customModule="TactileSlider">
                                 <rect key="frame" x="37.666666666666657" y="188" width="300" height="28"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="yzJ-ra-cQJ"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="vertical" value="NO"/>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="thumbTint">
-                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="trackBackground">
                                         <color key="value" red="0.94499540329999998" green="0.94515722989999995" blue="0.94498521089999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
@@ -116,7 +115,7 @@
                                     <action selector="CeillingLights:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jxz-pf-2tL"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qm1-8X-PGN">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qm1-8X-PGN">
                                 <rect key="frame" x="152.66666666666666" y="104" width="70" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="7mj-v1-13J"/>
@@ -130,7 +129,7 @@
                                     <action selector="offButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iTV-ln-8ey"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KtA-oP-Fn6">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KtA-oP-Fn6">
                                 <rect key="frame" x="50.666666666666657" y="104" width="52" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="52" id="C1C-8h-k6e"/>
@@ -147,14 +146,12 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="831-va-qGx" customClass="TactileSlider" customModule="TactileSlider">
                                 <rect key="frame" x="37.666666666666657" y="696" width="300" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="2gR-hU-NVu"/>
                                     <constraint firstAttribute="height" constant="50" id="9RZ-fh-mcx"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="thumbTint">
-                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="trackBackground">
                                         <color key="value" red="0.94428803805772421" green="0.94428803805772421" blue="0.94428803805772421" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
@@ -173,6 +170,7 @@
                                 </connections>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="831-va-qGx" firstAttribute="top" secondItem="xCP-ei-QSW" secondAttribute="bottom" constant="55" id="3pr-Qk-spK"/>
@@ -204,7 +202,6 @@
                             <constraint firstItem="xCP-ei-QSW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="377" id="tEZ-sv-rrZ"/>
                             <constraint firstItem="IBd-70-EZm" firstAttribute="width" secondItem="Vcp-Gj-z6I" secondAttribute="width" id="zid-We-rWM"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <connections>

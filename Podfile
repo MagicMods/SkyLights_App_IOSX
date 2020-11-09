@@ -6,4 +6,5 @@ target 'SkyLights' do
 	pod 'SwiftSocket'
 #	pod 'CocoaAsyncSocket'
 	pod 'TactileSlider'
+  pod 'CocoaMQTT'
 end
