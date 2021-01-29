@@ -1,5 +1,5 @@
 PODS:
-  - CocoaAsyncSocket (7.6.4)
+  - CocoaAsyncSocket (7.6.5)
   - CocoaMQTT (1.2.5):
     - CocoaAsyncSocket (~> 7.6.3)
   - SwiftSocket (2.0.2)
@@ -18,11 +18,11 @@ SPEC REPOS:
     - TactileSlider
 
 SPEC CHECKSUMS:
-  CocoaAsyncSocket: 694058e7c0ed05a9e217d1b3c7ded962f4180845
+  CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
   CocoaMQTT: a61490ed3b328011c5d75169a77781983e2bb221
   SwiftSocket: 6f4c9c63fbc5c1d61188936bb3c599fd546f40ae
   TactileSlider: ca211be78178202c89412ed312f73020548f28ca
 
-PODFILE CHECKSUM: b2d3d9702c2cd5fb2135898b04fee4c15f175086
+PODFILE CHECKSUM: 9d7257e67c18661bf3614b9d6018f84be7b6e56a
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.10.1

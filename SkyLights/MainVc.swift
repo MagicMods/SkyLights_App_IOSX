@@ -6,7 +6,7 @@ import TactileSlider
 class MainVc: UIViewController {
 
 //	let host = "apple.com"
-	let host = "192.168.0.20"
+	let host = "192.168.1.130"
 	let portsw: Int32 = 9000
 	let port: UInt16 = 9000
 	var client: UDPClient?
@@ -37,7 +37,11 @@ class MainVc: UIViewController {
 
 	@IBOutlet weak var brightnessSlider: TactileSlider!
 	@IBOutlet weak var timerSlider: TactileSlider!
-
+    @IBOutlet weak var speedSlider: TactileSlider!
+    @IBOutlet weak var stopButton: UIButton!
+    @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var nextButton: UIButton!
+    
 
 	@IBAction func timerUpdateSlider(_ sender: Any) {
 		timerValue.setTitle("\(Int(timerSlider.value))" + "min", for: .normal)
@@ -88,6 +92,7 @@ class MainVc: UIViewController {
 	public var hhue: CGFloat = 1
 	public var brightness: CGFloat = 1
 	public var ledBrightness: UInt8 = 40
+    public var patternSpeed: UInt8 = 30
 
 	var bedLights: Bool = true
 	var deskLights: Bool = true
@@ -165,8 +170,31 @@ class MainVc: UIViewController {
 		sendData(dat: [13, 0])
 	}
 
+    @IBAction func SendSpeed(_ sender: TactileSlider) {
+        patternSpeed = UInt8(speedSlider.value)
 
-	func startTimer() {
+
+//        udpSocket.write([3, ledBrightness], withTimeout: 1, tag: 0)
+        sendData(dat: [6, patternSpeed])
+        print("PatternSpeed : \(patternSpeed)")
+    }
+    
+    @IBAction func SendStop(_ sender: Any) {
+        sendData(dat: [7, 1])
+        print("STOP")
+    }
+    
+    @IBAction func SendPlay(_ sender: Any) {
+        sendData(dat: [8, 1])
+        print("PLAY")
+    }
+    
+    @IBAction func SendNext(_ sender: Any) {
+        sendData(dat: [9, 1])
+        print("NEXT")
+    }
+    
+    func startTimer() {
 		countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
 
 	}
@@ -213,7 +241,7 @@ class MainVc: UIViewController {
 		for char in name.utf8 {
 			byteArray += [char]
 		}
-		byteArray.insert(15, at: 0)
+		byteArray.insert(5, at: 0)
 		sendData(dat: byteArray)
 	}
 
